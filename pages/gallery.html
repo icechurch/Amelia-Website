@@ -94,7 +94,15 @@
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav"><span></span></button>
     <nav class="nav" id="primary-nav" aria-label="Primary">
       <a href="../index.html">Home</a>
-      <a href="gallery.html">Gallery</a>
+      <div class="nav-dropdown">
+        <a href="gallery.html">Gallery</a>
+        <div class="nav-dropdown__menu">
+          <a href="gallery.html#recent-works">Recent Works</a>
+          <a href="gallery.html#planetary-series">Planetary Series</a>
+          <a href="gallery.html#minor-arcana">Minor Arcana</a>
+          <a href="gallery.html#selected-works">Selected Works</a>
+        </div>
+      </div>
       <a href="tarot.html">Tarot Deck</a>
       <a href="readings.html">Readings</a>
       <a href="shop.html">Shop</a>
@@ -119,8 +127,27 @@
   </div>
 </section>
 
+<!-- ============ RECENT WORKS ============ -->
+<section class="section" id="recent-works">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">New</span>
+      <h2>Recent Works</h2>
+    </div>
+
+    <div class="grid grid--studio">
+      <a href="#" class="card reveal" data-lightbox data-caption="Recent work">
+        <div class="card__media"><img src="../assets/images/gallery/recent-01.jpg" alt="Recent painting by Amelia Passer — figure with red poppies" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Recent work">
+        <div class="card__media"><img src="../assets/images/gallery/recent-02.jpg" alt="Recent painting by Amelia Passer — mythological scene with swan, flowers, and classical figures" loading="lazy" /></div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ SEVEN BASICS ============ -->
-<section class="section">
+<section class="section" id="planetary-series">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">The Seven Basics · Planetary Talisman Series · 2021–2023</span>
@@ -315,7 +342,7 @@
 </section>
 
 <!-- ============ MINOR ARCANA / ELEMENTAL CYCLE SERIES ============ -->
-<section class="section">
+<section class="section" id="minor-arcana">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">The Minor Arcana · Elemental Cycle Series</span>
@@ -430,7 +457,7 @@
 </section>
 
 <!-- ============ SELECTED WORKS ============ -->
-<section class="section">
+<section class="section" id="selected-works">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Studio</span>

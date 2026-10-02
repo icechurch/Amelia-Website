@@ -16,12 +16,28 @@
     });
     nav.querySelectorAll('a').forEach(a =>
       a.addEventListener('click', () => {
+        if (dropdownTriggers.has(a)) return;
         nav.classList.remove('is-open');
         toggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       })
     );
   }
+
+  // -------- Gallery nav dropdown (mobile) --------
+  const dropdownTriggers = new Set();
+  document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+    const trigger = dropdown.querySelector(':scope > a');
+    if (!trigger) return;
+    dropdownTriggers.add(trigger);
+    trigger.addEventListener('click', function (e) {
+      if (window.innerWidth <= 880) {
+        e.preventDefault();
+        e.stopPropagation();
+        dropdown.classList.toggle('is-open');
+      }
+    });
+  });
 
   // -------- Reveal on scroll --------
   const reveals = document.querySelectorAll('.reveal');
