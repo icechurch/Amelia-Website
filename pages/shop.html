@@ -1,0 +1,814 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shop — Amelia Passer</title>
+<meta name="description" content="Shop the Astro Magician's Tarot deck, original talismanic paintings, archival giclée prints, and original drawings by Amelia Passer." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Amelia Passer" />
+<meta property="og:title" content="Shop — Amelia Passer" />
+<meta property="og:description" content="The Astro Magician's Tarot deck, original talismanic paintings, archival giclée prints, and original drawings — direct from the studio." />
+<meta property="og:image" content="https://ameliapasser.com/assets/images/shop/tarot-deck.jpg" />
+<meta property="og:url" content="https://ameliapasser.com/pages/shop.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Shop — Amelia Passer" />
+<meta name="twitter:description" content="The Astro Magician's Tarot deck, original paintings, archival prints, and drawings." />
+<meta name="twitter:image" content="https://ameliapasser.com/assets/images/shop/tarot-deck.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/styles.css" />
+<style>
+  .shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 32px;
+  }
+  .shop-item {
+    background: var(--bg-1);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .shop-item:hover { transform: translateY(-4px); border-color: var(--hairline-strong); }
+  .shop-item__media {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    position: relative;
+    background: var(--bg-2);
+  }
+  .shop-item__media img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+  .shop-item:hover .shop-item__media img { transform: scale(1.04); }
+  .shop-item__body {
+    padding: 28px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .shop-item__category {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .shop-item__title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    margin: 0;
+    line-height: 1.15;
+  }
+  .shop-item__spec {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    color: var(--ink-2);
+    margin: 0;
+  }
+  .shop-item__desc {
+    color: var(--ink-2);
+    font-size: 0.93rem;
+    line-height: 1.55;
+    margin: 8px 0 0;
+    flex: 1;
+  }
+  .shop-item__bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid var(--hairline);
+    gap: 12px;
+  }
+  .shop-item__pricing { display: flex; flex-direction: column; gap: 2px; }
+  .shop-item__price-original {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--ink-2);
+    text-decoration: line-through;
+  }
+  .shop-item__price {
+    font-family: var(--font-mono);
+    color: var(--ink-0);
+    font-weight: 500;
+    font-size: 1.05rem;
+  }
+  .shop-item__price--oos {
+    color: var(--ink-2);
+    font-style: italic;
+    font-family: var(--font-display);
+    font-size: 1rem;
+  }
+  .shop-item__action {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    transition: color 0.2s ease;
+    white-space: nowrap;
+  }
+  .shop-item__action:hover { color: var(--gold-soft); }
+
+  .shop-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 4px 12px;
+    background: rgba(10, 8, 20, 0.85);
+    color: var(--gold);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    backdrop-filter: blur(8px);
+  }
+  .shop-tag--oos {
+    background: rgba(184, 127, 158, 0.2);
+    color: var(--rose);
+    border-color: rgba(184, 127, 158, 0.4);
+  }
+  .shop-filter {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 48px;
+  }
+  .shop-filter button {
+    padding: 8px 18px;
+    border: 1px solid var(--hairline-strong);
+    border-radius: 999px;
+    color: var(--ink-1);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+  }
+  .shop-filter button:hover { color: var(--gold); border-color: var(--gold); }
+  .shop-filter button.is-active { background: var(--gold); color: var(--bg-0); border-color: var(--gold); }
+</style>
+<link rel="icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="%230a0814"/><circle cx="32" cy="32" r="14" fill="none" stroke="%23d4af37" stroke-width="2"/><path d="M32 4v8M32 52v8M4 32h8M52 32h8" stroke="%23d4af37" stroke-width="2" stroke-linecap="round"/></svg>' />
+</head>
+<body>
+
+<div class="starfield" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="../index.html" class="brand">
+      <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+        <defs>
+          <radialGradient id="brand-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#e8c870" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#e8c870" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="32" cy="32" r="30" fill="url(#brand-glow)"/>
+        <circle cx="32" cy="32" r="14" fill="none" stroke="#d4af37" stroke-width="1.4"/>
+        <path d="M22 32a10 10 0 0 0 14 9 12 12 0 1 1 0-18 10 10 0 0 0-14 9z" fill="#d4af37"/>
+        <g stroke="#d4af37" stroke-width="1" stroke-linecap="round">
+          <path d="M32 4v6"/><path d="M32 54v6"/>
+          <path d="M4 32h6"/><path d="M54 32h6"/>
+          <path d="M11 11l4 4"/><path d="M49 49l4 4"/>
+          <path d="M53 11l-4 4"/><path d="M15 49l-4 4"/>
+        </g>
+      </svg>
+      <span class="brand__name">Amelia <span>Passer</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav"><span></span></button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="tarot.html">Tarot Deck</a>
+      <a href="readings.html">Readings</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="min-height:auto; padding: 96px 0 32px;">
+  <div class="container">
+    <div class="text-center" style="max-width: 720px; margin: 0 auto;">
+      <span class="eyebrow">Shop</span>
+      <h1>Take a piece home.</h1>
+      <p class="lede">
+        The limited-edition Astro Magician's Tarot deck, original
+        talismanic paintings, and original drawings — direct from the
+        studio.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!--
+  Shop checkout setup
+  ===================
+  Amelia's Shopify store: https://amelia-passer-art.myshopify.com/
+  All "Order →" links go directly to live Shopify product pages.
+  "Inquire →" links go to the site contact form for sold-out work
+  or items not currently listed on Shopify.
+-->
+
+<section class="section" style="padding-top: 32px;">
+  <div class="container">
+
+    <div class="shop-filter reveal" role="tablist" aria-label="Filter shop">
+      <button class="is-active" data-filter="all">All</button>
+      <button data-filter="deck">Tarot Deck</button>
+      <button data-filter="original">Original Paintings</button>
+      <button data-filter="print">Prints</button>
+      <button data-filter="drawing">Drawings</button>
+    </div>
+
+    <div class="shop-grid">
+
+      <!-- Tarot Deck -->
+      <article class="shop-item reveal" data-cat="deck">
+        <div class="shop-item__media">
+          <span class="shop-tag">Limited Edition</span>
+          <img src="../assets/images/shop/tarot-deck.jpg" alt="The Astro Magician's Tarot deck — limited edition" loading="lazy" />
+        </div>
+        <div class="shop-item__body">
+          <p class="shop-item__category">Tarot Deck · Pre-order</p>
+          <h3 class="shop-item__title">Limited Edition Astro Magician's Tarot Deck</h3>
+          <p class="shop-item__spec">Edition of 500 · Funded on Kickstarter</p>
+          <p class="shop-item__desc">
+            Each deck comes with a guidebook and a numbered edition box.
+            International shipping is $40 for non-European countries.
+          </p>
+          <div class="shop-item__bottom">
+            <div class="shop-item__pricing">
+              <span class="shop-item__price">$55.00</span>
+            </div>
+            <a href="https://amelia-passer-art.myshopify.com/products/limited-edition-astro-magicians-tarot-deck" target="_blank" rel="noopener" class="shop-item__action">Order →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Birth of Venus -->
+      <article class="shop-item reveal" data-cat="original">
+        <div class="shop-item__media">
+          <img src="../assets/images/shop/birth-of-venus.jpg" alt="Birth of Venus — original oil painting by Amelia Passer" loading="lazy" />
+        </div>
+        <div class="shop-item__body">
+          <p class="shop-item__category">Original Painting</p>
+          <h3 class="shop-item__title">Birth of Venus</h3>
+          <p class="shop-item__spec">48″ × 60″ · Oil on canvas · 2019–2020</p>
+          <p class="shop-item__desc">
+            Of all my paintings, this one holds a special place. The Greco-Roman
+            myth — Venus born from the foam after the battle of Cronos and
+            Uranus. Sperm whales below represent the foam; the embryo on the
+            right represents rebirth.
+          </p>
+          <div class="shop-item__bottom">
+            <div class="shop-item__pricing">
+              <span class="shop-item__price-original">$10,000.00</span>
+              <span class="shop-item__price">$7,000.00</span>
+            </div>
+            <a href="https://amelia-passer-art.myshopify.com/products/birth-of-venus-original-painting" target="_blank" rel="noopener" class="shop-item__action">Inquire →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Dreams of the Jewel -->
+      <article class="shop-item reveal" data-cat="original">
+        <div class="shop-item__media">
+          <img src="../assets/images/shop/dreams-of-the-jewel.jpg" alt="Dreams of the Jewel — original oil painting by Amelia Passer" loading="lazy" />
+        </div>
+        <div class="shop-item__body">
+          <p class="shop-item__category">Original Painting</p>
+          <h3 class="shop-item__title">Dreams of the Jewel</h3>
+          <p class="shop-item__spec">48″ × 60″ · Oil on canvas · 2020–2021</p>
+          <p class="shop-item__desc">
+            Guanyin, Chinese goddess of mercy and the physical embodiment of
+            compassion — known as the "Jewel within the Lotus." She stands
+            across the landscape immersed in peace, her dream for all.
+          </p>
+          <div class="shop-item__bottom">
+            <div class="shop-item__pricing">
+              <span class="shop-item__price-original">$10,000.00</span>
+              <span class="shop-item__price">$7,000.00</span>
+            </div>
+            <a href="https://amelia-passer-art.myshopify.com/products/dreams-of-the-jewel-original-painting" target="_blank" rel="noopener" class="shop-item__action">Inquire →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Durga Ma in Leo -->
+      <article class="shop-item reveal" data-cat="original">
+        <div class="shop-item__media">
+          <img src="../assets/images/shop/durga-ma-in-leo.jpg" alt="Durga Ma in Leo — original oil painting by Amelia Passer" loading="lazy" />
+        </div>
+        <div class="shop-item__body">
+          <p class="shop-item__category">Original Painting</p>
+          <h3 class="shop-item__title">Durga Ma in Leo</h3>
+          <p class="shop-item__spec">36″ × 30″ · Oil on canvas · 2018</p>
+          <p class="shop-item__desc">
+            The divine universal mother riding her lion vehicle. In her hands:
+            sword (cutting through illusion), butterflies (transformation),
+            lotus (growth), conch (call to action). For all mothers, in every
+            stage of strength.
+          </p>
+          <div class="shop-item__bottom">
+            <div class="shop-item__pricing">
+              <span class="shop-item__price-original">$8,000.00</span>
+              <span class="shop-item__price">$5,600.00</span>
+            </div>
+            <a href="https://amelia-passer-art.myshopify.com/products/durga-ma-in-leo-original-painting" target="_blank" rel="noopener" class="shop-item__action">Inquire →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Lady's Mantle -->
+      <article class="shop-item reveal" data-cat="original">
+        <div class="shop-item__media">
+          <img src="../assets/images/shop/ladys-mantle.jpg" alt="Lady's Mantle — original oil painting by Amelia Passer" loading="lazy" />
+        </div>
+        <div class="shop-item__body">
+          <p class="shop-item__category">Original Painting</p>
+          <h3 class="shop-item__title">Lady's Mantle</h3>
+          <p class="shop-item__spec">22″ × 28″ · Oil on canvas · 2020</p>
+          <p class="shop-item__desc">
+            A portrait of a friend and muse, painted in the language of
+            Hermetic alchemy — rose, datura, mugwort, lemon balm, and Lady's
+            Mantle. In Latin, <em>Alchemia</em>: the little alchemist that
+            naturally distills water on its leaves.
+          </p>
+          <div class="shop-item__bottom">
+            <div class="shop-item__pricing">
+              <span class="shop-item__price">$3,500.00</span>
+            </div>
+            <a href="../index.html#contact" class="shop-item__action">Inquire →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- The Protectress -->
+      <article class="shop-item reveal" data-cat="original">
+        <div class="shop-item__media">
+          <img src="../assets/images/shop/the-protectress.jpg" alt="The Protectress — original oil painting by Amelia Passer" loading="lazy" />
+        </div>
+        <div class="shop-item__body">
+          <p class="shop-item__category">Original Painting</p>
+          <h3 class="shop-item__title">The Protectress</h3>
+          <p class="shop-item__spec">30″ × 36″ · 2018</p>
+          <p class="shop-item__desc">
+            Painted during the Dakota Access Pipeline controversy. She came
+            through clearly as a guardian of water and air — there's a raven
+            in the clouds behind her if you look. Songs came through me while
+            painting; I'll share them with the buyer.
+          </p>
+          <div class="shop-item__bottom">
+            <div class="shop-item__pricing">
+              <span class="shop-item__price-original">$1,200.00</span>
+              <span class="shop-item__price">$600.00</span>
+            </div>
+            <a href="https://amelia-passer-art.myshopify.com/products/the-protectress-original-painting" target="_blank" rel="noopener" class="shop-item__action">Order →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Hemlock drawing -->
+      <article class="shop-item reveal" data-cat="drawing">
+        <div class="shop-item__media">
+          <img src="../assets/images/shop/hemlock.jpg" alt="Hemlock — original drawing by Amelia Passer" loading="lazy" />
+        </div>
+        <div class="shop-item__body">
+          <p class="shop-item__category">Original Drawing</p>
+          <h3 class="shop-item__title">Hemlock</h3>
+          <p class="shop-item__spec">11″ × 14″ · Toned paper · 2023</p>
+          <p class="shop-item__desc">
+            From the plant Umbel series — honoring the umbel plant families
+            in herbalism. Hemlock is the gatekeeper: a deeply poisonous
+            plant said to protect the fae realms in the forest.
+          </p>
+          <div class="shop-item__bottom">
+            <div class="shop-item__pricing">
+              <span class="shop-item__price-original">$300.00</span>
+              <span class="shop-item__price">$150.00</span>
+            </div>
+            <a href="../index.html#contact" class="shop-item__action">Inquire →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ PRINTS ============ -->
+
+      <!-- ALL 7 PLANETS bundle -->
+      <article class="shop-item reveal" data-cat="print">
+        <div class="shop-item__media">
+          <span class="shop-tag">Save 15%</span>
+          <img src="https://cdn.shopify.com/s/files/1/0993/3301/3817/files/e5562e3d-9f69be_57584c8f2df64678b04c18fc1155b208_mv2.jpg" alt="All 7 Planets — print bundle" loading="lazy" />
+        </div>
+        <div class="shop-item__body">
+          <p class="shop-item__category">Print Bundle · 7 Talismans</p>
+          <h3 class="shop-item__title">All 7 Planets</h3>
+          <p class="shop-item__spec">~11″ × 14.5″ · Archival paper · Signed</p>
+          <p class="shop-item__desc">
+            All seven planetary talisman prints — Sun, Moon, Mercury,
+            Venus, Mars, Jupiter, Saturn — at a 15% bundle discount.
+            Allow 4–6 weeks to ship.
+          </p>
+          <div class="shop-item__bottom">
+            <div class="shop-item__pricing">
+              <span class="shop-item__price-original">$350.00</span>
+              <span class="shop-item__price">$300.00</span>
+            </div>
+            <a href="https://amelia-passer-art.myshopify.com/products/all-7-planets" target="_blank" rel="noopener" class="shop-item__action">Order →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Sun print -->
+      <article class="shop-item reveal" data-cat="print">
+        <div class="shop-item__media">
+          <img src="https://cdn.shopify.com/s/files/1/0993/3301/3817/files/c7025f7d-9f69be_e177c42485bf495bb7801d793d63d446_mv2.jpg" alt="Sun — archival print" loading="lazy" />
+        </div>
+        <div class="shop-item__body">
+          <p class="shop-item__category">Print · Solar Talisman</p>
+          <h3 class="shop-item__title">Sun</h3>
+          <p class="shop-item__spec">~11″ × 14.5″ · Archival paper · Signed</p>
+          <p class="shop-item__desc">
+            Archival print of the Sun planetary talisman — painted on the
+            Sun's day to harness its qualities of vitality, leadership,
+            and creative power.
+          </p>
+          <div class="shop-item__bottom">
+            <div class="shop-item__pricing">
+              <span class="shop-item__price">$50.00</span>
+            </div>
+            <a href="https://amelia-passer-art.myshopify.com/products/sun-print" target="_blank" rel="noopener" class="shop-item__action">Order →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Moon print -->
+      <article class="shop-item reveal" data-cat="print">
+        <div class="shop-item__media">
+          <img src="https://cdn.shopify.com/s/files/1/0993/3301/3817/files/6f3b4930-9f69be_047d4882418e4901bae87c6633436796_mv2.jpg" alt="Moon — archival print" loading="lazy" />
+        </div>
+        <div class="shop-item__body">
+          <p class="shop-item__category">Print · Lunar Talisman</p>
+          <h3 class="shop-item__title">Moon</h3>
+          <p class="shop-item__spec">~11″ × 14.5″ · Archival paper · Signed</p>
+          <p class="shop-item__desc">
+            Archival print of the Moon planetary talisman — painted on the
+            Moon's day to harness its qualities of intuition, dreaming,
+            and inner reflection.
+          </p>
+          <div class="shop-item__bottom">
+            <div class="shop-item__pricing">
+              <span class="shop-item__price">$50.00</span>
+            </div>
+            <a href="https://amelia-passer-art.myshopify.com/products/moon-print" target="_blank" rel="noopener" class="shop-item__action">Order →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Mercury print -->
+      <article class="shop-item reveal" data-cat="print">
+        <div class="shop-item__media">
+          <img src="https://cdn.shopify.com/s/files/1/0993/3301/3817/files/e9d76246-9f69be_68286bd5a09549668656a95516bd90a4_mv2.jpg" alt="Mercury — archival print" loading="lazy" />
+        </div>
+        <div class="shop-item__body">
+          <p class="shop-item__category">Print · Mercurial Talisman</p>
+          <h3 class="shop-item__title">Mercury</h3>
+          <p class="shop-item__spec">~11″ × 14.5″ · Archival paper · Signed</p>
+          <p class="shop-item__desc">
+            Archival print of the Mercury planetary talisman — painted on
+            Mercury's day to harness its qualities of communication,
+            quickness, and trade.
+          </p>
+          <div class="shop-item__bottom">
+            <div class="shop-item__pricing">
+              <span class="shop-item__price">$50.00</span>
+            </div>
+            <a href="https://amelia-passer-art.myshopify.com/products/mercury-print" target="_blank" rel="noopener" class="shop-item__action">Order →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Venus print -->
+      <article class="shop-item reveal" data-cat="print">
+        <div class="shop-item__media">
+          <img src="https://cdn.shopify.com/s/files/1/0993/3301/3817/files/bae2e71c-9f69be_70fb46b43df44c269fa5a8ac73607c61_mv2.jpg" alt="Venus — archival print" loading="lazy" />
+        </div>
+        <div class="shop-item__body">
+          <p class="shop-item__category">Print · Venusian Talisman</p>
+          <h3 class="shop-item__title">Venus</h3>
+          <p class="shop-item__spec">~11″ × 14.5″ · Archival paper · Signed</p>
+          <p class="shop-item__desc">
+            Archival print of the Venus planetary talisman — painted on
+            Venus's day to harness her qualities of love, beauty, and
+            harmonic abundance.
+          </p>
+          <div class="shop-item__bottom">
+            <div class="shop-item__pricing">
+              <span class="shop-item__price">$50.00</span>
+            </div>
+            <a href="https://amelia-passer-art.myshopify.com/products/venus-print" target="_blank" rel="noopener" class="shop-item__action">Order →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Mars print -->
+      <article class="shop-item reveal" data-cat="print">
+        <div class="shop-item__media">
+          <img src="https://cdn.shopify.com/s/files/1/0993/3301/3817/files/6bc7a0e2-9f69be_b95dfd3248b64ba894fd807bababdafe_mv2.jpg" alt="Mars — archival print" loading="lazy" />
+        </div>
+        <div class="shop-item__body">
+          <p class="shop-item__category">Print · Martial Talisman</p>
+          <h3 class="shop-item__title">Mars</h3>
+          <p class="shop-item__spec">~11″ × 14.5″ · Archival paper · Signed</p>
+          <p class="shop-item__desc">
+            Archival print of the Mars planetary talisman — painted on
+            Mars's day to harness his qualities of action, courage, and
+            decisive force.
+          </p>
+          <div class="shop-item__bottom">
+            <div class="shop-item__pricing">
+              <span class="shop-item__price">$50.00</span>
+            </div>
+            <a href="https://amelia-passer-art.myshopify.com/products/mars-print" target="_blank" rel="noopener" class="shop-item__action">Order →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Jupiter print -->
+      <article class="shop-item reveal" data-cat="print">
+        <div class="shop-item__media">
+          <img src="https://cdn.shopify.com/s/files/1/0993/3301/3817/files/5937f7fa-9f69be_ee9aa062f68e48ff8bf544525d446f88_mv2.jpg" alt="Jupiter — archival print" loading="lazy" />
+        </div>
+        <div class="shop-item__body">
+          <p class="shop-item__category">Print · Jovial Talisman</p>
+          <h3 class="shop-item__title">Jupiter</h3>
+          <p class="shop-item__spec">~11″ × 14.5″ · Archival paper · Signed</p>
+          <p class="shop-item__desc">
+            Archival print of the Jupiter planetary talisman — painted on
+            Jupiter's day to harness his qualities of expansion, fortune,
+            and benevolent guidance.
+          </p>
+          <div class="shop-item__bottom">
+            <div class="shop-item__pricing">
+              <span class="shop-item__price">$50.00</span>
+            </div>
+            <a href="https://amelia-passer-art.myshopify.com/products/jupiter-print" target="_blank" rel="noopener" class="shop-item__action">Order →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Saturn print -->
+      <article class="shop-item reveal" data-cat="print">
+        <div class="shop-item__media">
+          <img src="https://cdn.shopify.com/s/files/1/0993/3301/3817/files/34dc9ce3-9f69be_712c431de2704ec88db856b0e5958580_mv2.jpg" alt="Saturn — archival print" loading="lazy" />
+        </div>
+        <div class="shop-item__body">
+          <p class="shop-item__category">Print · Saturnian Talisman</p>
+          <h3 class="shop-item__title">Saturn</h3>
+          <p class="shop-item__spec">~11″ × 14.5″ · Archival paper · Signed</p>
+          <p class="shop-item__desc">
+            Archival print of the Saturn planetary talisman — painted on
+            Saturn's day to harness his qualities of structure, discipline,
+            and the hard wisdom of time.
+          </p>
+          <div class="shop-item__bottom">
+            <div class="shop-item__pricing">
+              <span class="shop-item__price">$50.00</span>
+            </div>
+            <a href="https://amelia-passer-art.myshopify.com/products/saturn-print" target="_blank" rel="noopener" class="shop-item__action">Order →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Birth of Venus print -->
+      <article class="shop-item reveal" data-cat="print">
+        <div class="shop-item__media">
+          <img src="https://cdn.shopify.com/s/files/1/0993/3301/3817/files/2644af2b-9f69be_174707955dd746b594344bd3ff40a331_mv2.jpg" alt="Birth of Venus — print" loading="lazy" />
+        </div>
+        <div class="shop-item__body">
+          <p class="shop-item__category">Print</p>
+          <h3 class="shop-item__title">Birth of Venus</h3>
+          <p class="shop-item__spec">Giclée · Matte archival paper · Signed</p>
+          <p class="shop-item__desc">
+            Signed giclée print of the Birth of Venus — Aphrodite born from
+            the foam, with sperm whales below and the embryo of rebirth.
+          </p>
+          <div class="shop-item__bottom">
+            <div class="shop-item__pricing">
+              <span class="shop-item__price">$15.00</span>
+            </div>
+            <a href="https://amelia-passer-art.myshopify.com/products/birth-of-venus-print" target="_blank" rel="noopener" class="shop-item__action">Order →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- The Protectress print -->
+      <article class="shop-item reveal" data-cat="print">
+        <div class="shop-item__media">
+          <img src="https://cdn.shopify.com/s/files/1/0993/3301/3817/files/3cf92760-9f69be_6c78347f1fe748ada0d98ca349506f95_mv2.jpg" alt="The Protectress — print" loading="lazy" />
+        </div>
+        <div class="shop-item__body">
+          <p class="shop-item__category">Print</p>
+          <h3 class="shop-item__title">The Protectress</h3>
+          <p class="shop-item__spec">Giclée · Matte archival paper · Signed</p>
+          <p class="shop-item__desc">
+            Signed giclée print of The Protectress — guardian of water and
+            air, painted in honor of the Water Protectors.
+          </p>
+          <div class="shop-item__bottom">
+            <div class="shop-item__pricing">
+              <span class="shop-item__price">$15.00</span>
+            </div>
+            <a href="https://amelia-passer-art.myshopify.com/products/the-protectress-print" target="_blank" rel="noopener" class="shop-item__action">Order →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Mother of Eden print -->
+      <article class="shop-item reveal" data-cat="print">
+        <div class="shop-item__media">
+          <img src="https://cdn.shopify.com/s/files/1/0993/3301/3817/files/d1e6cc1d-9f69be_76e9bd357dac4b3c9b4a4b278712debf_mv2.jpg" alt="Mother of Eden — print" loading="lazy" />
+        </div>
+        <div class="shop-item__body">
+          <p class="shop-item__category">Print</p>
+          <h3 class="shop-item__title">Mother of Eden</h3>
+          <p class="shop-item__spec">Giclée · Archival paper · Signed</p>
+          <p class="shop-item__desc">
+            An offering and prayer for the plant medicines and the people of
+            the world — a piece about healing, devotion, and remembrance.
+          </p>
+          <div class="shop-item__bottom">
+            <div class="shop-item__pricing">
+              <span class="shop-item__price">$25.00</span>
+            </div>
+            <a href="https://amelia-passer-art.myshopify.com/products/mother-of-eden-print" target="_blank" rel="noopener" class="shop-item__action">Order →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Dreams of a Jewel print -->
+      <article class="shop-item reveal" data-cat="print">
+        <div class="shop-item__media">
+          <img src="https://cdn.shopify.com/s/files/1/0993/3301/3817/files/dd28c66f-9f69be_54e964d1d5ee4968bdecfa9643f66446_mv2.jpg" alt="Dreams of a Jewel — print" loading="lazy" />
+        </div>
+        <div class="shop-item__body">
+          <p class="shop-item__category">Print</p>
+          <h3 class="shop-item__title">Dreams of a Jewel</h3>
+          <p class="shop-item__spec">Giclée · Archival paper · Signed</p>
+          <p class="shop-item__desc">
+            Signed giclée print of Dreams of the Jewel — Guanyin standing
+            across the landscape immersed in peace, her dream for all.
+          </p>
+          <div class="shop-item__bottom">
+            <div class="shop-item__pricing">
+              <span class="shop-item__price">$35.00</span>
+            </div>
+            <a href="https://amelia-passer-art.myshopify.com/products/dreams-of-a-jewel-print" target="_blank" rel="noopener" class="shop-item__action">Order →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Durga Ma in Leo print -->
+      <article class="shop-item reveal" data-cat="print">
+        <div class="shop-item__media">
+          <img src="https://cdn.shopify.com/s/files/1/0993/3301/3817/files/fed0e2b9-9f69be_8e20dd8688de49dca81dc15a1095c454_mv2.jpg" alt="Durga Ma in Leo — print" loading="lazy" />
+        </div>
+        <div class="shop-item__body">
+          <p class="shop-item__category">Print</p>
+          <h3 class="shop-item__title">Durga Ma in Leo</h3>
+          <p class="shop-item__spec">Giclée · Archival paper · Signed</p>
+          <p class="shop-item__desc">
+            Signed giclée print of Durga Ma in Leo — the divine universal
+            mother riding her lion vehicle, for all mothers.
+          </p>
+          <div class="shop-item__bottom">
+            <div class="shop-item__pricing">
+              <span class="shop-item__price">$35.00</span>
+            </div>
+            <a href="https://amelia-passer-art.myshopify.com/products/durga-ma-in-leo-print" target="_blank" rel="noopener" class="shop-item__action">Order →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Gone Fishing print -->
+      <article class="shop-item reveal" data-cat="print">
+        <div class="shop-item__media">
+          <img src="https://cdn.shopify.com/s/files/1/0993/3301/3817/files/234d532a-9f69be_d3ace43712694cfeb25927a29b2127b4_mv2.jpg" alt="Gone Fishing — print" loading="lazy" />
+        </div>
+        <div class="shop-item__body">
+          <p class="shop-item__category">Print</p>
+          <h3 class="shop-item__title">Gone Fishing</h3>
+          <p class="shop-item__spec">Giclée · Matte paper · Signed</p>
+          <p class="shop-item__desc">
+            Vibrant giclée print on matte paper — colors and detail crisp
+            as the original. A perfect point of interest and conversation.
+          </p>
+          <div class="shop-item__bottom">
+            <div class="shop-item__pricing">
+              <span class="shop-item__price">$40.00</span>
+            </div>
+            <a href="https://amelia-passer-art.myshopify.com/products/gone-fishing-print" target="_blank" rel="noopener" class="shop-item__action">Order →</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="text-center muted" style="margin-top: 64px; font-size: 0.92rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+      Want to inquire directly, request a commission, or ask about
+      shipping? <a href="../index.html#contact" style="color: var(--gold);">Send a message</a>.
+    </p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__inner">
+      <div>
+        <a href="../index.html" class="brand">
+          <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+        <defs>
+          <radialGradient id="brand-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#e8c870" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#e8c870" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="32" cy="32" r="30" fill="url(#brand-glow)"/>
+        <circle cx="32" cy="32" r="14" fill="none" stroke="#d4af37" stroke-width="1.4"/>
+        <path d="M22 32a10 10 0 0 0 14 9 12 12 0 1 1 0-18 10 10 0 0 0-14 9z" fill="#d4af37"/>
+        <g stroke="#d4af37" stroke-width="1" stroke-linecap="round">
+          <path d="M32 4v6"/><path d="M32 54v6"/>
+          <path d="M4 32h6"/><path d="M54 32h6"/>
+          <path d="M11 11l4 4"/><path d="M49 49l4 4"/>
+          <path d="M53 11l-4 4"/><path d="M15 49l-4 4"/>
+        </g>
+      </svg>
+          <span class="brand__name">Amelia <span>Passer</span></span>
+        </a>
+        <p class="muted" style="font-size:0.9rem; max-width:38ch; margin-top:12px;">
+          Talismanic oil paintings, the Astro Magician's Tarot, and personal readings. Studio in Boulder, Colorado.
+        </p>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="tarot.html">The Astro Magician's Tarot</a></li>
+          <li><a href="readings.html">Readings</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:ameliapasser@gmail.com">ameliapasser@gmail.com</a></li>
+        </ul>
+        <div class="socials" style="margin-top:18px;">
+          <a href="https://www.instagram.com/ameliapasser" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
+          </a>
+          <a href="https://www.facebook.com/ameliapasser" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 8h2V5h-2.5C11.5 5 10 6.5 10 8.5V11H8v3h2v6h3v-6h2.2l.3-3H13V9c0-.6.4-1 1-1z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© <span id="year"></span> Amelia Passer. All work and likeness reserved.</span>
+      <span>Made with intention.</span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();
+  // Shop filter
+  (function(){
+    const btns = document.querySelectorAll('.shop-filter button');
+    const items = document.querySelectorAll('.shop-item');
+    btns.forEach(b => b.addEventListener('click', () => {
+      btns.forEach(x => x.classList.remove('is-active'));
+      b.classList.add('is-active');
+      const f = b.dataset.filter;
+      items.forEach(it => {
+        const cat = it.dataset.cat;
+        it.style.display = (f === 'all' || cat === f) ? '' : 'none';
+      });
+    }));
+  })();
+</script>
+<script src="../assets/script.js"></script>
+</body>
+</html>

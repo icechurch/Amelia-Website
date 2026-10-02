@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gallery — Amelia Passer</title>
+<meta name="description" content="Original talismanic oil paintings by Amelia Passer — The Seven Basics planetary series and selected gallery works." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Amelia Passer" />
+<meta property="og:title" content="Gallery — Amelia Passer" />
+<meta property="og:description" content="Original talismanic oil paintings — The Seven Basics planetary series, the Minor Arcana elemental cycle, and selected studio works." />
+<meta property="og:image" content="https://ameliapasser.com/assets/images/seven-basics/01-moon.jpg" />
+<meta property="og:url" content="https://ameliapasser.com/pages/gallery.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Gallery — Amelia Passer" />
+<meta name="twitter:description" content="Original talismanic oil paintings — Seven Basics planetary series, Minor Arcana, and studio works." />
+<meta name="twitter:image" content="https://ameliapasser.com/assets/images/seven-basics/01-moon.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/styles.css" />
+<style>
+  /* Page-specific: full-width Seven Basics feature blocks */
+  .planet-feature {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 56px;
+    align-items: center;
+    padding: 56px 0;
+    border-top: 1px solid var(--hairline);
+  }
+  .planet-feature:first-of-type { border-top: 0; }
+  .planet-feature--reverse { grid-template-columns: 1fr 1.3fr; }
+  .planet-feature--reverse .planet-feature__media { order: 2; }
+  .planet-feature__media {
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    background: var(--bg-2);
+    box-shadow: var(--shadow-soft);
+    cursor: zoom-in;
+    transition: transform 0.4s ease;
+  }
+  .planet-feature__media:hover { transform: translateY(-4px); }
+  .planet-feature__media img { width: 100%; height: auto; display: block; }
+  .planet-feature__meta {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .planet-feature h3 { font-size: clamp(2rem, 4vw, 2.8rem); margin: 0 0 8px; }
+  .planet-feature__spec {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-2);
+    margin-bottom: 16px;
+  }
+  @media (max-width: 880px) {
+    .planet-feature { grid-template-columns: 1fr; gap: 24px; padding: 36px 0; }
+    .planet-feature--reverse .planet-feature__media { order: 0; }
+  }
+</style>
+<link rel="icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="%230a0814"/><circle cx="32" cy="32" r="14" fill="none" stroke="%23d4af37" stroke-width="2"/><path d="M32 4v8M32 52v8M4 32h8M52 32h8" stroke="%23d4af37" stroke-width="2" stroke-linecap="round"/></svg>' />
+</head>
+<body>
+
+<div class="starfield" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="../index.html" class="brand" aria-label="Amelia Passer — home">
+      <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+        <defs>
+          <radialGradient id="brand-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#e8c870" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#e8c870" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="32" cy="32" r="30" fill="url(#brand-glow)"/>
+        <circle cx="32" cy="32" r="14" fill="none" stroke="#d4af37" stroke-width="1.4"/>
+        <path d="M22 32a10 10 0 0 0 14 9 12 12 0 1 1 0-18 10 10 0 0 0-14 9z" fill="#d4af37"/>
+        <g stroke="#d4af37" stroke-width="1" stroke-linecap="round">
+          <path d="M32 4v6"/><path d="M32 54v6"/>
+          <path d="M4 32h6"/><path d="M54 32h6"/>
+          <path d="M11 11l4 4"/><path d="M49 49l4 4"/>
+          <path d="M53 11l-4 4"/><path d="M15 49l-4 4"/>
+        </g>
+      </svg>
+      <span class="brand__name">Amelia <span>Passer</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav"><span></span></button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="tarot.html">Tarot Deck</a>
+      <a href="readings.html">Readings</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ PAGE HEADER ============ -->
+<section class="hero" style="min-height:auto; padding: 96px 0 32px;">
+  <div class="container">
+    <div class="text-center" style="max-width: 760px; margin: 0 auto;">
+      <span class="eyebrow">Gallery</span>
+      <h1>Original paintings.</h1>
+      <p class="lede">
+        The <em class="gold">Seven Basics</em> Planetary Talisman Series
+        and the <em class="gold">Minor Arcana</em> Elemental Cycle Series,
+        alongside selected studio works. All pieces are 48″ × 30″ oil on
+        canvas with mineral pigments and metal leaf, unless otherwise noted.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SEVEN BASICS ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">The Seven Basics · Planetary Talisman Series · 2021–2023</span>
+      <h2>One painting for each of the seven classical bodies.</h2>
+      <p class="muted">
+        Inspired by Paracelsus' seven basics of spagyric preparation, each
+        painting was begun under its planet's astrological election and worked
+        only on its planetary day. Before each session, the planet was invoked
+        through ceremonial magic, the Orphic Hymn sung, and the appropriate
+        incense burned. 48″ × 30″ · Oil, mineral pigments, and metal leaf on canvas.
+      </p>
+    </div>
+
+    <!-- Moon -->
+    <div class="planet-feature reveal" id="moon">
+      <a href="#" class="planet-feature__media" data-lightbox data-caption="The Moon — 48×30in, oils, casein, silver leaf">
+        <img src="../assets/images/seven-basics/01-moon.jpg" alt="The Moon — talismanic painting by Amelia Passer" loading="lazy" />
+      </a>
+      <div>
+        <p class="planet-feature__meta">☽ Moon</p>
+        <h3>The Moon</h3>
+        <p class="planet-feature__spec">Oils, casein, silver leaf</p>
+        <p>
+          Commenced under a Moon in Taurus forming a sextile to the Sun in
+          Cancer — born within a moment of emotional harmony and fertile
+          grounding. Through the layered process of mischtechnik, the surface
+          itself follows the lunar cycle: casein in waxing phases for soft
+          radiance and inner glow, darker oils as the Moon waned to pull the
+          viewer into shadow and subconscious terrain.
+        </p>
+        <p>
+          Silver leaf, the sacred metal of the Moon, seals the work — catching
+          light in a way that shifts with the viewer's movement, mimicking
+          the Moon's own reflective nature. A talisman of intuition, emotional
+          regulation, and inner attunement.
+        </p>
+        <p class="planet-feature__spec" style="margin-top: 8px;">Cancer crab painted during the full moon in Cancer.</p>
+      </div>
+    </div>
+
+    <!-- Mercury -->
+    <div class="planet-feature planet-feature--reverse reveal" id="mercury">
+      <a href="#" class="planet-feature__media" data-lightbox data-caption="Mercury — 48×30in, oils on canvas">
+        <img src="../assets/images/seven-basics/02-mercury.jpg" alt="Mercury — talismanic painting by Amelia Passer" loading="lazy" />
+      </a>
+      <div>
+        <p class="planet-feature__meta">☿ Mercury</p>
+        <h3>Mercury</h3>
+        <p class="planet-feature__spec">Oils on canvas</p>
+        <p>
+          Initiated at the exact moment Mercury aligned with the Ascendant in
+          Gemini — the threshold between worlds, where thought becomes
+          language and spirit becomes form. Painted exclusively on Wednesdays,
+          the rhythm of the work mirrors Mercury's quicksilver nature:
+          adaptive, fluid, intellectually charged.
+        </p>
+        <p>
+          A talisman of clarity, communication, and perception — heightening
+          awareness and sharpening the mind. It invites dialogue, not only
+          between people, but between inner and outer realities.
+        </p>
+        <p class="planet-feature__spec" style="margin-top: 8px;">Hermit and Virgo painted with Mercury in Virgo.</p>
+      </div>
+    </div>
+
+    <!-- Venus -->
+    <div class="planet-feature reveal" id="venus">
+      <a href="#" class="planet-feature__media" data-lightbox data-caption="Venus — 48×30in, oils on canvas, copper leaf">
+        <img src="../assets/images/seven-basics/03-venus.jpg" alt="Venus — talismanic painting by Amelia Passer" loading="lazy" />
+      </a>
+      <div>
+        <p class="planet-feature__meta">♀ Venus</p>
+        <h3>Venus</h3>
+        <p class="planet-feature__spec">Oils on canvas, copper leaf</p>
+        <p>
+          Begun under Venus in Taurus — rooted in sensuality, embodiment, and
+          the intelligence of beauty. Pigmented with malachite (rich in copper,
+          Venus's sacred metal), the surface carries both material and
+          symbolic resonance.
+        </p>
+        <p>
+          Green dominates the field: lush, fertile, alive — not passive beauty,
+          but generative force. The kind that draws connection, intimacy, and
+          creative flow. A talisman of love, attraction, and emotional harmony,
+          softening boundaries while strengthening relational awareness.
+        </p>
+        <p class="planet-feature__spec" style="margin-top: 8px;">Copper leaf applied during the Venus–Moon conjunction in Taurus.</p>
+      </div>
+    </div>
+
+    <!-- Sun -->
+    <div class="planet-feature planet-feature--reverse reveal" id="sun">
+      <a href="#" class="planet-feature__media" data-lightbox data-caption="The Sun — 48×30in, oils on canvas, gold leaf">
+        <img src="../assets/images/seven-basics/04-sun.jpg" alt="The Sun — talismanic painting by Amelia Passer" loading="lazy" />
+      </a>
+      <div>
+        <p class="planet-feature__meta">☉ Sun</p>
+        <h3>The Sun</h3>
+        <p class="planet-feature__spec">Oils on canvas, gold leaf</p>
+        <p>
+          Initiated on August 8th — the energetic apex of the Lion's Gate
+          Portal — and worked on Sundays from there. Layer by layer the
+          surface builds toward radiance until the painting feels almost
+          animate. Gold leaf, the metal of the Sun, punctuates the
+          composition with flashes of illumination and divine authority.
+        </p>
+        <p>
+          Yellow and gold tones evoke vitality, clarity, expansion. A talisman
+          of life force, confidence, and creative power — it does not quietly
+          exist; it radiates.
+        </p>
+        <p class="planet-feature__spec" style="margin-top: 8px;">Gold leaf applied at the Sun's exaltation of 10° Aries.</p>
+      </div>
+    </div>
+
+    <!-- Mars -->
+    <div class="planet-feature reveal" id="mars">
+      <a href="#" class="planet-feature__media" data-lightbox data-caption="Mars — 48×30in, oils on canvas">
+        <img src="../assets/images/seven-basics/05-mars.jpg" alt="Mars — talismanic painting by Amelia Passer" loading="lazy" />
+      </a>
+      <div>
+        <p class="planet-feature__meta">♂ Mars</p>
+        <h3>Mars</h3>
+        <p class="planet-feature__spec">Oils on canvas</p>
+        <p>
+          Created during Mars's transit through Scorpio — a particularly
+          potent expression of Martian force: focused, transformative, deeply
+          instinctual. Iron oxide pigment sourced from the Rocky Mountains
+          physically anchors the painting to the Earth, reinforcing Mars's
+          association with raw material strength and survival.
+        </p>
+        <p>
+          The palette — cadmium reds and deep blacks — creates a field of
+          intensity and motion. Painted exclusively on Tuesdays, the process
+          itself demanded discipline and confrontation. A talisman of courage,
+          willpower, and embodied action.
+        </p>
+        <p class="planet-feature__spec" style="margin-top: 8px;">Scorpion painted while Mars was in Scorpio.</p>
+      </div>
+    </div>
+
+    <!-- Jupiter -->
+    <div class="planet-feature planet-feature--reverse reveal" id="jupiter">
+      <a href="#" class="planet-feature__media" data-lightbox data-caption="Jupiter — 48×30in, oils on canvas">
+        <img src="../assets/images/seven-basics/06-jupiter.jpg" alt="Jupiter — talismanic painting by Amelia Passer" loading="lazy" />
+      </a>
+      <div>
+        <p class="planet-feature__meta">♃ Jupiter</p>
+        <h3>Jupiter</h3>
+        <p class="planet-feature__spec">Oils on canvas</p>
+        <p>
+          Initiated as Jupiter entered Pisces — the expansive, spiritual, and
+          benevolent qualities of that alignment carried throughout. Infused
+          with lapis lazuli, the surface holds a deep, celestial blue:
+          historically associated with wisdom, divinity, and higher knowledge.
+        </p>
+        <p>
+          Worked on Thursdays, the painting developed slowly, allowing space
+          for growth, intuition, and openness. A talisman of abundance, faith,
+          and expansion — material, intellectual, and spiritual.
+        </p>
+        <p class="planet-feature__spec" style="margin-top: 8px;">Wheel card / Jove painted with Jupiter in Pisces and Sun in Sagittarius.</p>
+      </div>
+    </div>
+
+    <!-- Saturn -->
+    <div class="planet-feature reveal" id="saturn">
+      <a href="#" class="planet-feature__media" data-lightbox data-caption="Saturn — 48×30in, oils on canvas">
+        <img src="../assets/images/seven-basics/07-saturn.jpg" alt="Saturn — talismanic painting by Amelia Passer" loading="lazy" />
+      </a>
+      <div>
+        <p class="planet-feature__meta">♄ Saturn</p>
+        <h3>Saturn</h3>
+        <p class="planet-feature__spec">Oils on canvas</p>
+        <p>
+          Created during Saturn's transit through Aquarius — structure within
+          innovation, discipline meeting vision. Bone black introduces a
+          profound material symbolism: mortality, time, transformation. This
+          is contrasted with lead white, offering moments of emergence and
+          clarity within darkness.
+        </p>
+        <p>
+          Painted exclusively on Saturdays, the work demanded patience,
+          restraint, commitment. A talisman of boundaries, mastery, and wisdom
+          earned through experience — its presence is grounding, sobering,
+          and stabilizing.
+        </p>
+        <p class="planet-feature__spec" style="margin-top: 8px;">Lead white applied while Saturn was in positive aspect and rulership — the last until 2040.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MINOR ARCANA / ELEMENTAL CYCLE SERIES ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">The Minor Arcana · Elemental Cycle Series</span>
+      <h2>Four paintings for the four suits.</h2>
+      <p class="muted">
+        Companion to the Seven Basics — the elemental ground beneath the
+        planetary heaven. Each suit was begun on its corresponding solstice
+        or equinox, dialoguing with the Kabbalistic Tree of Life.
+        48″ × 30″ · Oil on canvas.
+      </p>
+    </div>
+
+    <!-- Cups -->
+    <div class="planet-feature reveal" id="cups">
+      <a href="#" class="planet-feature__media" data-lightbox data-caption="Cups — 48×30in, oil on canvas" data-lightbox-src="../assets/images/minor-arcana/cups-large.jpg">
+        <img src="../assets/images/minor-arcana/cups.jpg" alt="Cups — Minor Arcana / Elemental Cycle Series" loading="lazy" />
+      </a>
+      <div>
+        <p class="planet-feature__meta">♋ Cups · Water</p>
+        <h3>Cups</h3>
+        <p class="planet-feature__spec">Water · Fall Equinox</p>
+        <p>
+          Initiated at the Fall Equinox, when light and dark are held in
+          perfect balance before descent. Cups embodies the emotional
+          threshold between fullness and release — water in its most
+          reflective state: memory, grief, intuition, surrender.
+        </p>
+        <p>
+          The composition suggests fluid movement and quiet containment —
+          emotion held just beneath the surface. Developed in a state of
+          inward focus: quieter, slower, deeply receptive. A talisman that
+          opens pathways into the emotional body and supports release,
+          integration, and deep listening.
+        </p>
+      </div>
+    </div>
+
+    <!-- Pentacles -->
+    <div class="planet-feature planet-feature--reverse reveal" id="pentacles">
+      <a href="#" class="planet-feature__media" data-lightbox data-caption="Pentacles — 48×30in, oil on canvas" data-lightbox-src="../assets/images/minor-arcana/pentacles-large.jpg">
+        <img src="../assets/images/minor-arcana/pentacles.jpg" alt="Pentacles — Minor Arcana / Elemental Cycle Series" loading="lazy" />
+      </a>
+      <div>
+        <p class="planet-feature__meta">♑ Pentacles · Earth</p>
+        <h3>Pentacles</h3>
+        <p class="planet-feature__spec">Earth · Winter Solstice</p>
+        <p>
+          Begun at the Winter Solstice — the longest night of the year —
+          Pentacles is rooted in stillness, density, and the unseen work
+          of growth beneath the surface. The painting holds a grounded,
+          almost gravitational pull: slow, deliberate, stabilizing.
+        </p>
+        <p>
+          Textures and tonal weight suggest material reality — body, labor,
+          time, endurance. A talisman of stability, prosperity, and
+          embodiment, anchoring the viewer and reinforcing connection to
+          the physical world while quietly supporting long-term resilience.
+        </p>
+      </div>
+    </div>
+
+    <!-- Swords -->
+    <div class="planet-feature reveal" id="swords">
+      <a href="#" class="planet-feature__media" data-lightbox data-caption="Swords — 48×30in, oil on canvas" data-lightbox-src="../assets/images/minor-arcana/swords-large.jpg">
+        <img src="../assets/images/minor-arcana/swords.jpg" alt="Swords — Minor Arcana / Elemental Cycle Series" loading="lazy" />
+      </a>
+      <div>
+        <p class="planet-feature__meta">♎ Swords · Air</p>
+        <h3>Swords</h3>
+        <p class="planet-feature__spec">Air · Spring Equinox</p>
+        <p>
+          Initiated at the Spring Equinox, Swords emerges at a moment of
+          sharp balance and new movement. The energy is precise, cutting,
+          clarifying — direction and tension, like a thought forming or a
+          truth being revealed.
+        </p>
+        <p>
+          The work was approached with heightened mental focus and
+          intentional clarity. A talisman of intellect, truth, and
+          discernment — cutting through illusion, inviting honesty,
+          decision-making, and alignment with higher understanding, even
+          when that clarity is uncomfortable.
+        </p>
+      </div>
+    </div>
+
+    <!-- Wands -->
+    <div class="planet-feature planet-feature--reverse reveal" id="wands">
+      <a href="#" class="planet-feature__media" data-lightbox data-caption="Wands — 48×30in, oil on canvas" data-lightbox-src="../assets/images/minor-arcana/wands-large.jpg">
+        <img src="../assets/images/minor-arcana/wands.jpg" alt="Wands — Minor Arcana / Elemental Cycle Series" loading="lazy" />
+      </a>
+      <div>
+        <p class="planet-feature__meta">♈ Wands · Fire</p>
+        <h3>Wands</h3>
+        <p class="planet-feature__spec">Fire · Summer Solstice</p>
+        <p>
+          Begun at the Summer Solstice — at the peak of light and solar
+          power — Wands is pure expansion and creative ignition. Movement,
+          heat, momentum: an outward surge of energy that feels alive and
+          generative.
+        </p>
+        <p>
+          One of the most physically energized processes, reflecting fire's
+          dynamic and consuming nature. A talisman of inspiration, action,
+          and creation — sparking ideas, fueling ambition, encouraging bold
+          expression.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ SELECTED WORKS ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Studio</span>
+      <h2>Selected Works</h2>
+      <p class="muted">A constellation of recent paintings, drawings, and process pieces from the studio gallery.</p>
+    </div>
+
+    <div class="grid grid--studio">
+      <!-- 25 selected studio works — natural aspect, no force crop -->
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/01.jpg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/02.jpg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/03.jpg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/04.jpg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/05.jpg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/06.jpg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/07.jpg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/08.jpg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/09.jpg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/10.jpg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/11.jpg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/12.jpg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/13.jpeg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/14.jpeg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/15.jpg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/16.jpg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/17.jpg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/18.jpg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/19.jpg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/20.jpeg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/21.jpeg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/22.jpeg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/23.jpg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/24.jpeg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+      <a href="#" class="card reveal" data-lightbox data-caption="Selected work">
+        <div class="card__media"><img src="../assets/images/gallery/25.jpg" alt="Painting from the studio" loading="lazy" /></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMMISSIONS CTA ============ -->
+<section class="section">
+  <div class="container container--narrow text-center">
+    <span class="eyebrow reveal">Commissions</span>
+    <h2 class="reveal">Looking for something specific?</h2>
+    <p class="lede reveal">
+      I take a small number of commissions each year — portraits, planetary
+      pieces, and live painting at events around the Front Range.
+    </p>
+    <div class="divider reveal" aria-hidden="true">✦</div>
+    <a href="../index.html#contact" class="btn btn--primary reveal">Inquire About a Commission <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__inner">
+      <div>
+        <a href="../index.html" class="brand">
+          <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+        <defs>
+          <radialGradient id="brand-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#e8c870" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#e8c870" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="32" cy="32" r="30" fill="url(#brand-glow)"/>
+        <circle cx="32" cy="32" r="14" fill="none" stroke="#d4af37" stroke-width="1.4"/>
+        <path d="M22 32a10 10 0 0 0 14 9 12 12 0 1 1 0-18 10 10 0 0 0-14 9z" fill="#d4af37"/>
+        <g stroke="#d4af37" stroke-width="1" stroke-linecap="round">
+          <path d="M32 4v6"/><path d="M32 54v6"/>
+          <path d="M4 32h6"/><path d="M54 32h6"/>
+          <path d="M11 11l4 4"/><path d="M49 49l4 4"/>
+          <path d="M53 11l-4 4"/><path d="M15 49l-4 4"/>
+        </g>
+      </svg>
+          <span class="brand__name">Amelia <span>Passer</span></span>
+        </a>
+        <p class="muted" style="font-size:0.9rem; max-width:38ch; margin-top:12px;">
+          Talismanic oil paintings, the Astro Magician's Tarot, and personal readings. Studio in Boulder, Colorado.
+        </p>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="tarot.html">The Astro Magician's Tarot</a></li>
+          <li><a href="readings.html">Readings</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:ameliapasser@gmail.com">ameliapasser@gmail.com</a></li>
+        </ul>
+        <div class="socials" style="margin-top:18px;">
+          <a href="https://www.instagram.com/ameliapasser" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
+          </a>
+          <a href="https://www.facebook.com/ameliapasser" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 8h2V5h-2.5C11.5 5 10 6.5 10 8.5V11H8v3h2v6h3v-6h2.2l.3-3H13V9c0-.6.4-1 1-1z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© <span id="year"></span> Amelia Passer. All work and likeness reserved.</span>
+      <span>Made with intention.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Artwork preview">
+  <button class="lightbox__close" aria-label="Close">×</button>
+  <div>
+    <div class="lightbox__content"></div>
+    <p class="lightbox__caption"></p>
+  </div>
+</div>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../assets/script.js"></script>
+</body>
+</html>
